@@ -1,0 +1,29 @@
+GENEL YAPI
+   - Ağ Modeli: MLB takımları (Node) ve oynanan maçlar (Edge) üzerinden kurgulanmıştır.
+   - Düğüm Sayısı: 109 (Verisetindeki takım sayısı).
+   - Kenar Sayısı: 585 (Gerçekleşen farklı eşleşmeler).
+   - Yorum: Ağın seyrek (sparse) bir yapısı vardır. Her takım herkesle oynamaz.
+
+METRİK YORUMLARI
+   - Density (Yoğunluk): ~0.10
+     Takımların sadece %10'u birbiriyle doğrudan maç yapmıştır. Bu, ligin coğrafi veya lig bazlı gruplara ayrıldığını gösterir.
+   
+   - Average Clustering Coefficient: ~0.41
+     Bu değerin yoğunluğa göre yüksek çıkması, "Kümelenme" olduğunu gösterir. Yani bir takımın rakipleri, birbirleriyle de maç yapmaktadır. Bu da lig fikstürünün bölgesel gruplar içinde yoğunlaştığını doğrular.
+
+   - Ortalama Derece (Average Degree): ~10.7
+     Bir takım sezon/veri aralığı boyunca ortalama 10-11 farklı takımla karşılaşmıştır.
+
+   - Diameter (Çap): 3
+     "Küçük Dünya" etkisi görülmektedir. Herhangi bir takımdan başka bir takıma, maç geçmişi üzerinden en fazla 3 adımda ulaşılabilir.
+
+MERKEZİLİK ANALİZLERİ
+   - Degree Centrality:
+     En yüksek skora sahip takımlar (Örn: Arizona, Texas), fikstür gereği en çok "farklı" takımla maç yapanlardır. Bu takımlar ligin en aktif veya en çeşitli fikstüre sahip takımlarıdır.
+
+   - Betweenness Centrality:
+     Yüksek puana sahip takımlar, farklı kümeler (örneğin farklı ligler veya doğu-batı grupları) arasında "köprü" görevi görür. Veri akışı (veya maç trafiği) bu takımlar üzerinden sağlanır.
+
+   - PageRank:
+     Yönlü ağda (kazanan-kaybeden), güçlü takımları yenen takımlar daha yüksek puan alır. Sadece çok maç kazanmak değil, "iyi takımları" yenmek PageRank'i artırır.
+
